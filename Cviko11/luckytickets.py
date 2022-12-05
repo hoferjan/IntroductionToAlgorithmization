@@ -15,10 +15,8 @@ class LuckyNumberCounter:
       second_half = number - (first_half * 10 **((len(str(number)))/2))
       first_half_sum = 0
       second_half_sum = 0
-      first_half = str(first_half)
-      first_half = list(first_half)
-      second_half = str(second_half)
-      second_half = list(second_half)
+      first_half = list(str(first_half))
+      second_half = list(str(second_half))
       for num in first_half:
           first_half_sum += int(num)
       for num in second_half:
@@ -46,14 +44,12 @@ class LuckyNumberCounter:
 
 
 def isLuckyNumber(number):
-    first_half = number//1000
-    second_half = number - (first_half*1000)
+    first_half = number // (10)**((len(str(number)))/2)
+    second_half = number - (first_half * 10 ** ((len(str(number)))/2))
     first_half_sum = 0
     second_half_sum = 0
-    first_half = str(first_half)
-    first_half = list(first_half)
-    second_half = str(second_half)
-    second_half = list(second_half)
+    first_half = list(str(int(first_half)))
+    second_half = list(str(int(second_half)))
     for num in first_half:
         first_half_sum += int(num)
     for num in second_half:
@@ -63,5 +59,4 @@ def isLuckyNumber(number):
     else:
         return False
 
-print(isLuckyNumber(111111))
-print(len(str(99)))
+print(isLuckyNumber(111111111))
